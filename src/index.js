@@ -21,16 +21,16 @@ class App extends React.Component {
         key={divId}
         data-div_id={divId}
         data-div_name={`Div ${divId}`}
-        onClick={this.handleButtonClicked}
+        onClick={this.handleDivClicked}
       >
         Div {divId}
       </div>
     ));
 
   /**
-   * Handle button's onClick event
+   * Handle Div's onClick event
    */
-  handleButtonClicked = ev => {
+  handleDivClicked = ev => {
     this.setState({
       // Retrieve the passed parameters from 'div_id' and 'div_name' datasets
       message: `Clicked div Id ${ev.currentTarget.dataset.div_id}, name ${
