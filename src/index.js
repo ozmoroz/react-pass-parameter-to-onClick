@@ -12,10 +12,9 @@ class App extends React.Component {
   state = { message: null };
 
   /**
-   * Render three DIVs
+   * Render a block of three DIVs
    */
   renderDivs = () =>
-    // Render a block of three DIVs
     [1, 2, 3].map(divId => (
       // Pass parameters in'div_id' and div_name data attributes
       <div
