@@ -1,7 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import "./styles.css";
+import './styles.css';
 
 /*******************************************************************
  * This project demonstrates how to pass a parameter to a an onClick
@@ -15,9 +15,11 @@ class App extends React.Component {
    * Render three DIVs
    */
   renderButtons = () =>
+    // Render a block of three buttons
     [1, 2, 3].map(divId => (
       // Pass parameters in a 'div_id' and div_name data attributes
       <div
+        key={divId}
         data-div_id={divId}
         data-div_name={`Div ${divId}`}
         onClick={this.handleButtonClicked}
@@ -31,10 +33,10 @@ class App extends React.Component {
    */
   handleButtonClicked = ev => {
     this.setState({
-      // Retrieve a passed parameter from 'div_id' and 'div_name' datasets
-      message: `${ev.currentTarget.dataset.div_name}: ${
-        ev.currentTarget.dataset.div_id
-      } clicked`
+      // Retrieve the passed parameters from 'div_id' and 'div_name' datasets
+      message: `Clicked div Id ${ev.currentTarget.dataset.div_id}, name ${
+        ev.currentTarget.dataset.div_name
+      }`
     });
   };
 
@@ -44,12 +46,12 @@ class App extends React.Component {
         <div>Click on one of the DIVs below:</div>
         {this.renderButtons()}
         {this.state.message && (
-          <div class="alert alert-primary">{this.state.message}</div>
+          <div className="alert alert-primary">{this.state.message}</div>
         )}
       </div>
     );
   }
 }
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 ReactDOM.render(<App />, rootElement);
