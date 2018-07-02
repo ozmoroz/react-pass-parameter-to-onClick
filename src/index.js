@@ -14,10 +14,10 @@ class App extends React.Component {
   /**
    * Render three DIVs
    */
-  renderButtons = () =>
-    // Render a block of three buttons
+  renderDivs = () =>
+    // Render a block of three DIVs
     [1, 2, 3].map(divId => (
-      // Pass parameters in a 'div_id' and div_name data attributes
+      // Pass parameters in'div_id' and div_name data attributes
       <div
         key={divId}
         data-div_id={divId}
@@ -44,7 +44,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div>Click on one of the DIVs below:</div>
-        {this.renderButtons()}
+        {this.renderDivs()}
         {this.state.message && (
           <div className="alert alert-primary">{this.state.message}</div>
         )}
